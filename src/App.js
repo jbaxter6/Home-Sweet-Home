@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar'
+import ListingContainer from './containers/ListingContainer'
+import Login from './components/Login'
+import Signup from './components/Signup';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {APIBASE} from './constants/apiBase'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       logged: false,
+       listings: []
+    }
+  }
+
+  toggleLogged = () => {
+    this.setState({
+      logged: !this.state.logged
+    })
+  }
+
+  // componentDidMount(){
+  //   fetch(APIBASE + '/listings')
+  //   .then(resp => resp.json())
+  //   .then(records => this.setState({records}))
+  // }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+         <NavBar logged={this.state.logged} toggle={this.toggleLogged} />
+         <Switch>
+            <Route path='/login' render = {(routeProps) => <Login {...routeProps} toggle={this.toggleLogged} /> } />
+            <Route path='/signup' render = {(routeProps) => <Signup {...routeProps} toggle={this.toggleLogged} /> } />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;
