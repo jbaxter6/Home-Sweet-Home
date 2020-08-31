@@ -11,7 +11,11 @@ export default class MainContainer extends Component {
         this.state = {
             listings: [],
             filterBy: 'All',
-            filterCond: 'All'
+            filterCond: 'All',
+            parking: false,
+            heating: false,
+            ac: false
+
         }
     }
 
@@ -33,6 +37,24 @@ export default class MainContainer extends Component {
         })
     }
 
+    sortPark = (value) => {
+        this.setState({
+            parking: value
+        })
+    }
+
+    sortHeat = (value) => {
+        this.setState({
+            heating: value
+        })
+    }
+
+    sortAc = (value) => {
+        this.setState({
+            ac: value
+        })
+    }
+
     filterListings = () => {
         let listings = [...this.state.listings]
         let filterProp = this.state.filterBy
@@ -48,6 +70,33 @@ export default class MainContainer extends Component {
         if(filterCond !== "All")
             listings = listings.filter(listing => listing.condition === filterCond)
 
+        return this.filterParking(listings)
+    }
+
+    filterParking = (listings) => {
+        let filterpark = this.state.parking
+
+        if(filterpark === true)
+            listings = listings.filter(listing => listing.parking === filterpark)
+
+        return this.filterHeat(listings)
+    }
+
+    filterHeat = (listings) => {
+        let filterHeat = this.state.heating
+
+        if(filterHeat === true)
+            listings = listings.filter(listing => listing.heating === filterHeat)
+
+        return this.filterAc(listings)
+    }
+
+    filterAc = (listings) => {
+        let filterAc = this.state.ac
+
+        if(filterAc === true)
+            listings = listings.filter(listing => listing.cooling === filterAc)
+
         return listings
     }
     
@@ -57,7 +106,16 @@ export default class MainContainer extends Component {
                 <div>
                     <h1> </h1>
                 </div>
-                <FilterContainer changeFilter={this.changePropType} changeCond={this.changeCond} />
+                <FilterContainer 
+                changeFilter={this.changePropType} 
+                changeCond={this.changeCond} 
+                sortPark={this.sortPark}
+                sortHeat={this.sortHeat}
+                sortAc={this.sortAc}
+                parking={this.state.parking}
+                heating={this.state.heating}
+                ac={this.state.ac}
+                />
                 <ListingContainer listings={this.filterListings()} />
             </div>
         )

@@ -4,6 +4,7 @@ export default class FilterContainer extends Component {
     render() {
         return (
             <div className="ui right visible sidebar">
+                <h1> Filters</h1> 
 
                 <label>Property-Type <i class="home icon"></i></label>
                 <select onChange={(e) => this.props.changeFilter(e.target.value)}>
@@ -24,17 +25,17 @@ export default class FilterContainer extends Component {
                 </select>
 
                 <div class="ui toggle checkbox">
-                    <input type="checkbox" value="parking" ></input>
+                    <input type="checkbox" value="parking" checked={this.props.parking} onChange={(e) => this.props.sortPark(e.target.checked)}></input>
                     <label>Parking</label>
                 </div>
-                
+
                 <div class="ui toggle checkbox">
-                    <input type="checkbox" value="heating"></input>
+                    <input type="checkbox" value="heating" checked={this.props.heat} onChange={(e) => this.props.sortHeat(e.target.checked)}></input>
                     <label>Heating</label>
                 </div>
 
                 <div class="ui toggle checkbox">
-                    <input type="checkbox" value="ac"></input>
+                    <input type="checkbox" value="ac" checked={this.props.ac} onChange={(e) => this.props.sortAc(e.target.checked)}></input>
                     <label>Air-Conditioning</label>
                 </div>
 

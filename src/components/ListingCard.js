@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
+import {APIBASE} from '../constants/apiBase'
 
 export default class ListingCard extends Component {
+
+    handleLike = () => {
+        fetch(APIBASE + `${this.props.listing.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+
+            })
+        })
+    }
+
     render() {
         return (
             <div class="ui raised link card">
@@ -74,6 +85,10 @@ export default class ListingCard extends Component {
                         null
                     }
 
+                    </div>
+                    
+                    <div class="extra content">
+                <i class="heart icon" onClick={this.handleLike()}> {this.props.listing.likes} likes</i>
                     </div>
 
                 </div>
