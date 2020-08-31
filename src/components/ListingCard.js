@@ -7,8 +7,8 @@ export default class ListingCard extends Component {
 
                 <div class="ui slide masked reveal image">
 
-                    <img src={this.props.listing.image} class="visible content" ></img>
-                    <img src={this.props.listing.image_2} class="hidden content" ></img>
+                    <img src={this.props.listing.image} class="visible content" alt="image1"></img>
+                    <img src={this.props.listing.image_2} class="hidden content" alt="image2"></img>
 
                 </div>
 

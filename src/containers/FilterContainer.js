@@ -27,10 +27,12 @@ export default class FilterContainer extends Component {
                     <input type="checkbox" value="parking" ></input>
                     <label>Parking</label>
                 </div>
+                
                 <div class="ui toggle checkbox">
                     <input type="checkbox" value="heating"></input>
                     <label>Heating</label>
                 </div>
+
                 <div class="ui toggle checkbox">
                     <input type="checkbox" value="ac"></input>
                     <label>Air-Conditioning</label>

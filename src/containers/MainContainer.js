@@ -47,13 +47,16 @@ export default class MainContainer extends Component {
         let filterCond = this.state.filterCond
         if(filterCond !== "All")
             listings = listings.filter(listing => listing.condition === filterCond)
-            
+
         return listings
     }
     
     render() {
         return (
             <div class="main-container">
+                <div>
+                    <h1> </h1>
+                </div>
                 <FilterContainer changeFilter={this.changePropType} changeCond={this.changeCond} />
                 <ListingContainer listings={this.filterListings()} />
             </div>

@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import HeroContainer from './containers/HeroContainer'
 import UserContainer from './containers/UserContainer'
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
 
 export default class App extends React.Component {
@@ -16,8 +16,8 @@ export default class App extends React.Component {
     super(props)
   
     this.state = {
-       logged: false,
-       listings: []
+      logged: false,
+      listings: []
     }
   }
 
@@ -34,12 +34,13 @@ export default class App extends React.Component {
         logged: !this.state.logged
       })
     }
+
   }
 
   render() {
     return (
       <BrowserRouter>
-         <NavBar logged={this.state.logged} toggle={this.toggleLogged} />
+        <NavBar logged={this.state.logged} toggle={this.toggleLogged} />
          {/* <UserContainer /> */}
           <div class="page-container">
           
@@ -56,7 +57,6 @@ export default class App extends React.Component {
 
           
           </div>
-          <div class="content-wrap"></div>
           <Footer />
       </BrowserRouter>
     )
