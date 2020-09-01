@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import HeroContainer from './containers/HeroContainer'
 import UserContainer from './containers/UserContainer'
+import ShowContainer from './containers/ShowContainer'
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
 
@@ -53,8 +54,9 @@ export default class App extends React.Component {
             <Signup {...routeProps} toggle={this.toggleLogged} /> } />
 
             <Route path='/account' render = {(routeProps) => <UserContainer {...routeProps} toggle={this.toggleLogged} /> } />
-            <Route path='/listings' render = {(routeProps) => <MainContainer {...routeProps}  listings={this.state.listing}/> } />
-
+            <Route exact path='/listings' render = {(routeProps) => <MainContainer {...routeProps}  listings={this.state.listing}/> } />
+            <Route path='/listings/:id' render = {(routeProps) => <ShowContainer {...routeProps} /> } />
+            
           
           </div>
           <Footer />

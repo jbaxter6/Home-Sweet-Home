@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './UserContainer.css'
 import ListingCard from '../components/ListingCard'
+import OfferCard from '../components/OfferCard'
 
 export default class UserContainer extends Component {
 
@@ -11,7 +12,6 @@ export default class UserContainer extends Component {
                 listings: [],
                 offers: []
             }
-            
         }
     }
 
@@ -23,16 +23,22 @@ export default class UserContainer extends Component {
         }))
     }
     
+    
     generateListing = () => {
         return this.state.user.listings.map(listing =>  
             <ListingCard listing={listing} />
-        )
+            )
+    }
+
+    generateOffer = () => {
+        return this.state.user.offers.map(offer => 
+                <OfferCard offer={offer}/>
+            )
     }
 
     render() {
-        console.log("i am the comp render")
         return (
-            <div className="user-container">
+            <div class="ui container segment">
                 <div class="ui centered card">
                     <div class="image">
                         <img src={this.state.user.image} alt="user"></img>
@@ -56,7 +62,9 @@ export default class UserContainer extends Component {
                 }
                 </div>
                 <div className="your-offers-container">
-
+                {
+                this.generateOffer()
+                }
                 </div>
             </div>
         )

@@ -11,35 +11,37 @@ export default class NavBar extends Component {
     render() {
         return (
             <div class="ui fixed top sticky menu">
-                <Link to='/'> <a class="yellow item" >Home</a> </Link>
-                <Link to='/listings'> <a class="yellow item">All Listings</a> </Link>
+                
+                <a href="/" class="yellow item" >Home</a>
+                
+                <a href="/listings" class="yellow item">All Listings</a>
 
                 {!this.props.logged ? 
-                <Link to='/signup'> <a class="yellow item" as={Link} to='/signup'>Sign Up</a> </Link>
+                <a href="/signup" class="yellow item" >Sign Up</a> 
                 :
                 null
                 }
 
                 {!this.props.logged ?
-                <Link to='/login'> <a class="yellow item" as={Link} to='/login'>Log In</a> </Link>
+                <a href="/login" class="yellow item" >Log In</a> 
                 :
                 null
                 }
 
                 {this.props.logged ?
-                <Link to='/account'> <a class="yellow item">Account Info</a> </Link>
+                <a href="/account" class="yellow item">Account Info</a>
                 : 
                 null
                 }
                 
                 {this.props.logged ?
-                <Link to='/apply'> <a class="yellow item">Apply for Loan</a> </Link>
+                <a href="/apply" class="yellow item">Apply for Loan</a> 
                 : 
                 null
                 }
 
                 {this.props.logged ?
-                <Link to='/' > <a class="yellow item"onClick={this.logout}>Log Out</a> </Link>
+                <a href="/" class="yellow item" onClick={this.logout}>Log Out</a> 
                 :
                 null
                 }

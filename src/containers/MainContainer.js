@@ -60,7 +60,7 @@ export default class MainContainer extends Component {
         let filterProp = this.state.filterBy
     
         if(filterProp !== "All")
-           listings = listings.filter(listing => listing.type_of_house === filterProp)
+            listings = listings.filter(listing => listing.type_of_house === filterProp)
 
         return this.filterCond(listings)
     }
@@ -103,6 +103,7 @@ export default class MainContainer extends Component {
     render() {
         return (
             <div class="main-container">
+                {/* <div class="ui raised padded container segment"> */}
                 <div>
                     <h1> </h1>
                 </div>
@@ -117,7 +118,9 @@ export default class MainContainer extends Component {
                 ac={this.state.ac}
                 />
                 <ListingContainer listings={this.filterListings()} />
+                {/* </div> */}
             </div>
+
         )
     }
 }

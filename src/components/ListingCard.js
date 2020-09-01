@@ -3,14 +3,16 @@ import {APIBASE} from '../constants/apiBase'
 
 export default class ListingCard extends Component {
 
-    handleLike = () => {
-        fetch(APIBASE + `${this.props.listing.id}`, {
-            method: 'PATCH',
-            body: JSON.stringify({
+    // handleLike = () => {
+    //     fetch(APIBASE + `${this.props.listing.id}`, {
+    //         method: 'PATCH',
+    //         body: JSON.stringify({
 
-            })
-        })
-    }
+    //         })
+    //     })
+    // }
+
+   
 
     render() {
         return (
@@ -88,8 +90,21 @@ export default class ListingCard extends Component {
                     </div>
                     
                     <div class="extra content">
-                <i class="heart icon" onClick={this.handleLike()}> {this.props.listing.likes} likes</i>
+                        <i class="heart icon"  > {this.props.listing.likes} likes</i>
+                        {/* onClick={this.handleLike()} */}
                     </div>
+
+                    <a href={`/listings/${this.props.listing.id}`}>
+
+                        <div class="ui animated yellow button" tabindex="0">
+                            <div class="visible content">View Listing</div>
+                            <div class="hidden content">
+                                <i class="home icon"></i>
+                                <i class="right arrow icon"></i>
+                            </div>
+                        </div>
+
+                    </a>
 
                 </div>
             </div>
