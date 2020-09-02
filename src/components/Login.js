@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import '../containers/Container.css'
 
 export default class Login extends Component {
 
@@ -41,7 +42,7 @@ export default class Login extends Component {
 
             <div class="main-container">
 
-            <div className="formcont">
+            <div className="form-cont">
             <form class="ui form" onSubmit={(e) => this.handleLogIn(e)}>
                 <h1 class="ui dividing header">Log in to account</h1>
                 <div class="field">

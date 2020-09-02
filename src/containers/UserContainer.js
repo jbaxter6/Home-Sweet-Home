@@ -31,10 +31,11 @@ export default class UserContainer extends Component {
     }
 
     generateOffer = () => {
-        return this.state.user.offers.map(offer => 
-                <OfferCard offer={offer}/>
-            )
+        return this.state.user.offers.map((offer, index ) => 
+            <OfferCard listing={offer.listing} offer={offer}/>
+        )
     }
+
 
     render() {
         return (
@@ -58,15 +59,18 @@ export default class UserContainer extends Component {
                     </div>
                 </div>
                 <div className="your-listing-container">
-                    <h1>Your Listings</h1>
+                    <h1>Your Properties</h1>
                 {
                 this.generateListing()
                 }
                 </div>
                 <div className="your-offers-container">
+                    <h1> Created Offers </h1>
+                <div class="ui cards">
                 {
                 this.generateOffer()
                 }
+                </div>
                 </div>
             </div>
 

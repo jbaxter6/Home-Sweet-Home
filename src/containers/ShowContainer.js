@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import OfferForm from '../components/OfferForm'
 
 class ShowContainer extends Component {
 
@@ -26,7 +27,9 @@ class ShowContainer extends Component {
     }
 
     formToggle = () => {
-
+        this.setState({
+            showForm: !this.state.showForm
+        })
     }
 
     render() {
@@ -37,6 +40,8 @@ class ShowContainer extends Component {
             <div className="main-container">
             
                 <div class="show-cont">
+
+                    <h1>Home Sweet Home</h1>
 
                     <div class="ui clearing divider"></div>
 
@@ -79,24 +84,32 @@ class ShowContainer extends Component {
                                 </div>
 
                             </div>
+
                         <div class="ui vertical divider">
-                        and
+
+                        <a>
+                            <div class="ui animated yellow massive button" tabindex="0" onClick={this.formToggle} >
+
+                                <div class="visible content">Make Offer</div>
+                                <div class="hidden content">
+                                    <i class="home icon"></i>
+                                </div>
+
+                            </div>
+                        </a>
+
                         </div>
                     </div>
 
-                    <a>
-                        <div class="ui animated yellow button" tabindex="0">
-                            <div class="visible content">Make Offer</div>
-                            <div class="hidden content">
-                                <i class="home icon"></i>
-                                <i class="right arrow icon"></i>
-                            </div>
-                        </div>
 
-                    </a>
+                    {/* form conditionally renders based on button click */}
+                    {this.state.showForm ?
+                    <OfferForm />
+                    :
+                    null
+                    }
 
                 </div>
-
 
             </div>
         )

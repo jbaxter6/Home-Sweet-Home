@@ -2,7 +2,10 @@ import React from 'react'
 
 const HeroContainer = (props) => {
     return (
-        <div class="main-container">
+        <div class="home-container">
+            <div class="hero-container">
+
+            </div>
         </div>
     )
 }
