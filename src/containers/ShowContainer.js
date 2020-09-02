@@ -101,6 +101,7 @@ class ShowContainer extends Component {
                         </div>
                     </div>
 
+                    <div class="ui clearing divider"></div>
 
                     {/* form conditionally renders based on button click */}
                     {this.state.showForm ?

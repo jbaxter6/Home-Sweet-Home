@@ -36,7 +36,21 @@
 .show-cont {
     border: 1px solid#DCDCDC;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #FFCB15, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+    margin-right: 300px;
+    margin-left: 20px;
+    margin-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    align-items:center;
+}
+
+.user-container {
+    border: 1px solid#DCDCDC;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
     margin-right: 300px;
     margin-left: 20px;
     margin-top: 80px;
@@ -53,8 +67,8 @@
     margin-bottom: 40px;
     margin-top: 40px;
     border-radius: 5px;
-    border: 5px solid #DCDCDC;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+    border: 5px solid white;
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 10px 0 #FFCB15, 0 2px 10px 0 #FFCB15;
 
 }
 
@@ -83,5 +97,19 @@
 
 .ui.four.cards {
     margin-top: 20px;
+}
+
+.form-cont {
+    border: 1px solid#DCDCDC;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+    margin-right: 300px;
+    margin-left: 20px;
+    margin-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    align-items:center;
 }
 

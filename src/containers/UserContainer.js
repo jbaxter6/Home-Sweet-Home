@@ -41,7 +41,7 @@ export default class UserContainer extends Component {
         return (
             <div class="main-container">
 
-            <div class="ui container segment">
+            <div class="user-container">
                 <div class="ui centered card">
                     <div class="image">
                         <img src={this.state.user.image} alt="user"></img>

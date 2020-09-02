@@ -42,33 +42,40 @@ export default class Signup extends Component {
     render() {
         return (
             <div class="main-container">
+                <div class="form-cont">
 
-            <form class="ui form" onSubmit={(e) => this.handleSignUp(e)}>
-                <h3 class="ui dividing header">Create an account</h3>
-                <div class="field">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="Username" onChange={this.handleChange}></input>
-                </div>
-                <div class="field">
-                    <label>E-mail</label>
-                    <input type="text" name="email" placeholder="E-mail" onChange={this.handleChange}></input>
-                </div>
-                <div class="field">
-                    <label>Profile Picture</label>
-                    <input type="text" name="image" placeholder="Please enter jpg. or png. files" onChange={this.handleChange}></input>
-                </div>
-                <div class="field">
-                    <label>What makes your HomeSweetHome</label>
-                    <input type="text" name="description" placeholder="talk about your perfect home" onChange={this.handleChange}></input>
-                </div>
-                <div class="field">
-                    <label>Create your password</label>
-                    <input type="password" name="password" placeholder="Password..." onChange={this.handleChange}></input>
-                </div>
-                <button class="ui yellow button" type="submit">Submit</button>
-                <Link to="/login"><p>Log in to existing account?</p> </Link>
-            </form>
+                    <form class="ui form" onSubmit={(e) => this.handleSignUp(e)}>
+                        <h1 class="ui dividing header">Create an account</h1>
+                        <div class="field">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Username" onChange={this.handleChange}></input>
+                        </div>
+                        <div class="field">
+                            <label>E-mail</label>
+                            <input type="text" name="email" placeholder="E-mail" onChange={this.handleChange}></input>
+                        </div>
+                        <div class="field">
+                            <label>Profile Picture</label>
+                            <input type="text" name="image" placeholder="Please enter jpg. or png. files" onChange={this.handleChange}></input>
+                        </div>
+                        <div class="field">
+                            <label>What makes your HomeSweetHome</label>
+                            <input type="text" name="description" placeholder="talk about your perfect home" onChange={this.handleChange}></input>
+                        </div>
+                        <div class="field">
+                            <label>Create your password</label>
+                            <input type="password" name="password" placeholder="Password..." onChange={this.handleChange}></input>
+                        </div>
+                        <button class="ui yellow button" type="submit">Submit</button>
+                        
+                        <div class="ui message">
 
+                            <Link to="/login"><p>Log in to existing account?</p> </Link>
+
+                        </div>
+                    </form>
+
+                </div>
             </div>
         )
     }

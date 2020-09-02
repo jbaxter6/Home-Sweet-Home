@@ -47,7 +47,7 @@ export default class NavBar extends Component {
                 null
                 }
                 
-                <a class="yellow item">Sound On</a>
+                {/* <a class="yellow item">Sound On</a> */}
             </div>
         )
     }
