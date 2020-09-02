@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './UserContainer.css'
+import './Container.css'
 import ListingCard from '../components/ListingCard'
 import OfferCard from '../components/OfferCard'
 
@@ -38,6 +38,8 @@ export default class UserContainer extends Component {
 
     render() {
         return (
+            <div class="main-container">
+
             <div class="ui container segment">
                 <div class="ui centered card">
                     <div class="image">
@@ -66,6 +68,8 @@ export default class UserContainer extends Component {
                 this.generateOffer()
                 }
                 </div>
+            </div>
+
             </div>
         )
     }

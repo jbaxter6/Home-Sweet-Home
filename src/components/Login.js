@@ -38,6 +38,9 @@ export default class Login extends Component {
 
     render() {
         return (
+
+            <div class="main-container">
+
             <div className="formcont">
             <form class="ui form" onSubmit={(e) => this.handleLogIn(e)}>
                 <h1 class="ui dividing header">Log in to account</h1>
@@ -54,6 +57,8 @@ export default class Login extends Component {
                     <Link to="/signup"><p>Want to register for new account?</p> </Link>
                 </div>
             </form>
+            </div>
+
             </div>
         )
     }

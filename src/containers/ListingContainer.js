@@ -12,8 +12,10 @@ export default class ListingContainer extends Component {
     render() {
         return (
             <div class="listing-cont">
-                <h1> All Listings </h1>
-                <div class="ui five cards">
+                <div class="cont-header">
+                    <h1> Active Listings </h1>
+                </div>
+                <div class="ui four cards">
                 {this.generateListing()}
                 </div>
             </div>

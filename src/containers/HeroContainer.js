@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroContainer = (props) => {
     return (
-        <div id="hero">
+        <div class="main-container">
         </div>
     )
 }

@@ -10,7 +10,7 @@ export default class Footer extends Component {
                             <a href="https://www.linkedin.com/in/johnnathan-baxter-6b7a61158/" style={{color: 'black'}}> <i class="linkedin icon"></i> </a>
                         </div>
                         <div>
-                            <a href="https://medium.com/@jbaxter6" style={{color:"black"}} > <p>© HomeSweetHome est. 2020, created by Johnnathan Baxter's </p> </a>
+                            <a href="https://medium.com/@jbaxter6" style={{color:"black"}} > <p>© HomeSweetHome est. 2020, created by Johnnathan Baxter </p> </a>
                         </div>
                 </div>
             </div>

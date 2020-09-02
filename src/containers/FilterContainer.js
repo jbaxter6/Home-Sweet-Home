@@ -3,7 +3,12 @@ import React, { Component } from 'react'
 export default class FilterContainer extends Component {
     render() {
         return (
-            <div className="ui right visible sidebar">
+            
+            
+            // <div className="ui right visible sidebar">
+
+            <div class="filter-cont">
+
                 <h1> Filters</h1> 
 
                 <label>Property-Type <i class="home icon"></i></label>
@@ -40,6 +45,7 @@ export default class FilterContainer extends Component {
                 </div>
 
             </div>
+
         )
     }
 }

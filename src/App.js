@@ -41,10 +41,9 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
+      <div class="body">
         <NavBar logged={this.state.logged} toggle={this.toggleLogged} />
-         {/* <UserContainer /> */}
-          <div class="page-container">
-          
+
             <Route exact path='/' render = {(routeProps) => <HeroContainer {...routeProps}  /> } />
 
             <Route path='/login' render = {(routeProps) => this.state.logged ? <Redirect to="/listings" /> : 
@@ -57,9 +56,8 @@ export default class App extends React.Component {
             <Route exact path='/listings' render = {(routeProps) => <MainContainer {...routeProps}  listings={this.state.listing}/> } />
             <Route path='/listings/:id' render = {(routeProps) => <ShowContainer {...routeProps} /> } />
             
-          
-          </div>
           <Footer />
+        </div>
       </BrowserRouter>
     )
   }

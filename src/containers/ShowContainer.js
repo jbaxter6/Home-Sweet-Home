@@ -34,11 +34,13 @@ class ShowContainer extends Component {
         const { listing } = this.state
         
         return (
-            <div className="show-container">
-                
-                <div class="ui raised very padded text container segment">
+            <div className="main-container">
+            
+                <div class="show-cont">
 
-                    <div class="ui slide masked reveal image">
+                    <div class="ui clearing divider"></div>
+
+                    <div class="show ui slide masked reveal image">
                         <img class="ui fluid image visible content" src={listing.image} alt="image1"></img>
                         <img class="ui fluid image hidden content" src={listing.image_2} alt="image2"></img>
                     </div>
@@ -54,19 +56,28 @@ class ShowContainer extends Component {
                     <div class="ui segment">
                         <div class="ui two column very relaxed grid">
                                 <div class="column">
+
                                     <div>
                                         <h5>Address:</h5>
                                         <p>{listing.street_name}</p>
                                         <p>{listing.city}, {listing.state} {listing.zip_code}</p>
                                     </div>
                                     <div>
-                                        <h5></h5>
-                                        <p>{listing.street_name}</p>
+                                        <h5>SquareFt:</h5>
+                                        <p>{listing.sq_foot} Sq.Ft.</p>
                                     </div>
+
+                                    <div>
+                                        <h5>SquareFt:</h5>
+                                        <p>{listing.sq_foot} Sq.Ft.</p>
+                                    </div>
+
                                 </div>
+
                                 <div class="column">
                                     <p></p>
                                 </div>
+
                             </div>
                         <div class="ui vertical divider">
                         and

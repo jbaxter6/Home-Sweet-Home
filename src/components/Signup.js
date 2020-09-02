@@ -41,6 +41,8 @@ export default class Signup extends Component {
 
     render() {
         return (
+            <div class="main-container">
+
             <form class="ui form" onSubmit={(e) => this.handleSignUp(e)}>
                 <h3 class="ui dividing header">Create an account</h3>
                 <div class="field">
@@ -66,6 +68,8 @@ export default class Signup extends Component {
                 <button class="ui yellow button" type="submit">Submit</button>
                 <Link to="/login"><p>Log in to existing account?</p> </Link>
             </form>
+
+            </div>
         )
     }
 }

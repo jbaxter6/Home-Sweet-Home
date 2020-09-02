@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Container.css'
 import ListingContainer from './ListingContainer';
 import FilterContainer from './FilterContainer';
 import {APIBASE} from '../constants/apiBase';
@@ -15,7 +16,6 @@ export default class MainContainer extends Component {
             parking: false,
             heating: false,
             ac: false
-
         }
     }
 
@@ -102,11 +102,8 @@ export default class MainContainer extends Component {
     
     render() {
         return (
-            <div class="main-container">
+            <div class="list-filt-container">
                 {/* <div class="ui raised padded container segment"> */}
-                <div>
-                    <h1> </h1>
-                </div>
                 <FilterContainer 
                 changeFilter={this.changePropType} 
                 changeCond={this.changeCond} 
@@ -117,7 +114,9 @@ export default class MainContainer extends Component {
                 heating={this.state.heating}
                 ac={this.state.ac}
                 />
+
                 <ListingContainer listings={this.filterListings()} />
+            
                 {/* </div> */}
             </div>
 
