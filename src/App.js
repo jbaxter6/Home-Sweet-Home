@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import MainContainer from './containers/MainContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import ListingForm from './components/ListingForm'
 import HeroContainer from './containers/HeroContainer'
 import UserContainer from './containers/UserContainer'
 import ShowContainer from './containers/ShowContainer'
@@ -52,6 +53,7 @@ export default class App extends React.Component {
             <Route path='/signup' render = {(routeProps) => this.state.logged ? <Redirect to="/listings" /> : 
             <Signup {...routeProps} toggle={this.toggleLogged} /> } />
 
+            <Route path='/create-listing' render = {(routeProps) => <ListingForm {...routeProps} toggle={this.toggleLogged} /> } />
             <Route path='/account' render = {(routeProps) => <UserContainer {...routeProps} toggle={this.toggleLogged} /> } />
             <Route exact path='/listings' render = {(routeProps) => <MainContainer {...routeProps}  listings={this.state.listing}/> } />
             <Route path='/listings/:id' render = {(routeProps) => <ShowContainer {...routeProps} /> } />

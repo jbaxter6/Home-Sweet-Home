@@ -34,6 +34,12 @@ export default class NavBar extends Component {
                 : 
                 null
                 }
+
+                {this.props.logged ?
+                <a href="/create-listing" class="yellow item">Create Listing</a>
+                :
+                null   
+                }
                 
                 {this.props.logged ?
                 <a href="/apply" class="yellow item">Apply for Loan</a> 

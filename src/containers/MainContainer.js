@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import './Container.css'
 import ListingContainer from './ListingContainer';
 import FilterContainer from './FilterContainer';
+import Pagination from '../components/Pagination'
 import {APIBASE} from '../constants/apiBase';
+
+
 
 export default class MainContainer extends Component {
 
@@ -11,6 +14,12 @@ export default class MainContainer extends Component {
     
         this.state = {
             listings: [],
+            currentListings: [],
+            loading: false,
+            currentPage: 1,
+            listingsPerPage: 20,
+            
+
             filterBy: 'All',
             filterCond: 'All',
             parking: false,
@@ -20,10 +29,31 @@ export default class MainContainer extends Component {
     }
 
     componentDidMount(){
+        
         fetch(APIBASE + '/listings')
         .then(resp => resp.json())
-        .then(listings => this.setState({listings}))
+        .then(listings => this.setState({
+            listings: listings,
+        }))
+
     }
+
+    // Switch pages of listings
+
+
+    nextPageClick = () => {
+        window.scrollTo(0, 0)
+    }
+
+    paginate = (pageNumber) => {
+        window.scrollTo(0, 0)
+        this.setState({
+            currentPage: pageNumber
+        })
+    }
+
+
+    // Affect state
 
     changePropType = (value) => {
         this.setState({
@@ -55,8 +85,16 @@ export default class MainContainer extends Component {
         })
     }
 
+
+
+    // filter and sort based on state
+
+
+
     filterListings = () => {
         let listings = [...this.state.listings]
+
+        
         let filterProp = this.state.filterBy
     
         if(filterProp !== "All")
@@ -92,15 +130,28 @@ export default class MainContainer extends Component {
     }
 
     filterAc = (listings) => {
+        let indexOfLastListing = this.state.currentPage * this.state.listingsPerPage
+        let indexOfFirstListing = indexOfLastListing - this.state.listingsPerPage
+        let currentListings
+        
         let filterAc = this.state.ac
+        
+        if(filterAc === true){
+        currentListings = listings.filter(listing => listing.cooling === filterAc)
+        currentListings.slice(indexOfFirstListing, indexOfLastListing);
+        }
+        else{
+            currentListings = listings.slice(indexOfFirstListing, indexOfLastListing);
+        }
 
-        if(filterAc === true)
-            listings = listings.filter(listing => listing.cooling === filterAc)
-
-        return listings
+        console.log(currentListings)
+        return currentListings
     }
     
+
     render() {
+
+
         return (
             <div class="list-filt-container">
                 {/* <div class="ui raised padded container segment"> */}
@@ -115,9 +166,14 @@ export default class MainContainer extends Component {
                 ac={this.state.ac}
                 />
 
-                <ListingContainer listings={this.filterListings()} />
+                <ListingContainer 
+                listings={this.filterListings()} 
+                currentPage={this.state.currentPage}
+                listingsPerPage={this.state.listingsPerPage}
+                totalListings={this.filterListings()} 
+                paginate={this.paginate}
+                />
             
-                {/* </div> */}
             </div>
 
         )

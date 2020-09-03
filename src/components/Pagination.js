@@ -1,9 +1,22 @@
 import React from 'react'
 
-export const Pagination = () => {
+const Pagination = (props) => {
+
+    const pageNumbers = [];
+
+    for(let i = 1; i <= Math.ceil(props.totalListings / props.listingsPerPage); i++) {
+        pageNumbers.push(i)
+    }
+
     return (
-        <div>
-            
+        <div class="ui pagination menu">
+            {pageNumbers.map(number => (
+                <a onClick={() => props.paginate(number)} class="item">
+                    {number}
+                </a>
+            ))}
         </div>
     )
 }
+
+export default Pagination

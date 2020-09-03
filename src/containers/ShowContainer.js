@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import OfferForm from '../components/OfferForm'
 
@@ -86,7 +86,12 @@ class ShowContainer extends Component {
                             </div>
 
                         <div class="ui vertical divider">
-                            <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
+                            {
+                                localStorage.token ?
+                                <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
+                                :
+                                <Fragment>and</Fragment>
+                            }
                         </div>
                     </div>
 
