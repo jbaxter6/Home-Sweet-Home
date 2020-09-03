@@ -42,35 +42,62 @@ export default class UserContainer extends Component {
             <div class="main-container">
 
             <div class="user-container">
-                <div class="ui centered card">
-                    <div class="image">
-                        <img src={this.state.user.image} alt="user"></img>
+
+                <div class="user-card" >
+                    <div class="image-c">
+                        <img class="card ui image" src={this.state.user.image} alt="user"></img>
                     </div>
-                    <div class="content">
+
+                    <div class="desc-c">
                         <p class="header">{this.state.user.username}</p>
                         <p class="header">{this.state.user.email}</p>
                         <div class="description">
                             {this.state.user.description}
                         </div>
                     </div>
+                </div>
+
+
+
+                <div class="ui centered card">
+                    
                     <div class="extra content">
                             <i class="user icon"></i>
                             {this.state.user.up_votes} up-votes
                     </div>
                 </div>
+
                 <div className="your-listing-container">
-                    <h1>Your Properties</h1>
+                    
+                    {
+                        this.state.user.listings.length > 0 ?
+                        <h1>Your Properties</h1>
+                        :
+                        null
+                    }
+                    
                 {
                 this.generateListing()
                 }
+
                 </div>
+
                 <div className="your-offers-container">
-                    <h1> Created Offers </h1>
-                <div class="ui cards">
+
+                    {
+                        this.state.user.offers.length > 0 ?
+                        <h1> Created Offers </h1> 
+                        :
+                        null
+                    }
+
+                    <div class="ui cards">
+
                 {
                 this.generateOffer()
                 }
-                </div>
+
+                    </div>
                 </div>
             </div>
 

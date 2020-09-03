@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {APIBASE} from '../constants/apiBase';
 
 export default class OfferForm extends Component {
     
@@ -11,7 +12,26 @@ export default class OfferForm extends Component {
     handleOffer = (e) => {
         e.preventDefault()
 
-        // fetch()
+        fetch(APIBASE + `/users/${localStorage.userId}/offers`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "accept": "application/json",
+            "Authorization": `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            user_id: localStorage.userId,
+            listing_id: this.props.listing.id,
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
+            phone_num: this.state.phoneNum,
+            email: this.state.email,
+            offer_price: this.state.offerPrice,
+            money_down: this.state.moneyDown,
+            loan_app: this.state.loanApp,
+        })
+
+        })
 
         e.target.reset()
     }

@@ -86,18 +86,7 @@ class ShowContainer extends Component {
                             </div>
 
                         <div class="ui vertical divider">
-
-                        <a>
-                            <div class="ui animated yellow massive button" tabindex="0" onClick={this.formToggle} >
-
-                                <div class="visible content">Make Offer</div>
-                                <div class="hidden content">
-                                    <i class="home icon"></i>
-                                </div>
-
-                            </div>
-                        </a>
-
+                            <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
                         </div>
                     </div>
 
@@ -105,7 +94,7 @@ class ShowContainer extends Component {
 
                     {/* form conditionally renders based on button click */}
                     {this.state.showForm ?
-                    <OfferForm />
+                    <OfferForm listing={listing} />
                     :
                     null
                     }
