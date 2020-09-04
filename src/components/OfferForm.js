@@ -86,7 +86,7 @@ export default class OfferForm extends Component {
                                 <div class="field">
                                     <label>Loan Application</label>
                                     <select class="ui compact dropdown" name="loanApp" onChange={this.handleChange}>
-                                        <option value="">Y / N</option>
+                                        <option value="null">Y / N</option>
                                         <option value="true" >Yes</option>
                                         <option value="false" >No</option>
                                     </select>

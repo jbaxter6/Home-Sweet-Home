@@ -170,7 +170,7 @@ export default class MainContainer extends Component {
                 listings={this.filterListings()} 
                 currentPage={this.state.currentPage}
                 listingsPerPage={this.state.listingsPerPage}
-                totalListings={this.filterListings()} 
+                totalListings={this.state.listings.length} 
                 paginate={this.paginate}
                 />
             
