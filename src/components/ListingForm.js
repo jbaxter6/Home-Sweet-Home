@@ -38,9 +38,22 @@ export default class ListingForm extends Component {
             type_of_house: this.state.propType,
             year_built: this.state.year, 
             sq_foot: this.state.sq,
-
-
-            
+            bedrooms: this.state.bedrooms,
+            half_bathrooms: this.state.halfbath,
+            full_bathrooms: this.state.fullbath,
+            description: this.state.desc,
+            nearest_elementary: this.state.elementary,
+            nearest_middle: this.state.middle,
+            nearest_high: this.state.high,
+            image: this.state.img,
+            image_2: this.state.image,
+            heating: this.state.heating,
+            cooling: this.state.cooling,
+            parking: this.state.parking,
+            garage: this.state.garage,
+            hoa: this.state.hoa,
+            pet_friendly: this.state.petfriendly,
+            pet_size: this.state.petsize
         })
 
         })
@@ -301,8 +314,8 @@ export default class ListingForm extends Component {
                                                 </div>
 
                                                 <div class="field">
-                                                    <label>For Sale</label>
-                                                    <select class="ui compact dropdown" name="selling" onChange={this.handleChange}>
+                                                    <label>Heating</label>
+                                                    <select class="ui compact dropdown" name="heating" onChange={this.handleChange}>
                                                         <option value="null">Y / N</option>
                                                         <option value="true" >Yes</option>
                                                         <option value="false" >No</option>
@@ -310,8 +323,8 @@ export default class ListingForm extends Component {
                                                 </div>  
 
                                                 <div class="field">
-                                                    <label>For Sale</label>
-                                                    <select class="ui compact dropdown" name="selling" onChange={this.handleChange}>
+                                                    <label>Cooling</label>
+                                                    <select class="ui compact dropdown" name="cooling" onChange={this.handleChange}>
                                                         <option value="null">Y / N</option>
                                                         <option value="true" >Yes</option>
                                                         <option value="false" >No</option>
