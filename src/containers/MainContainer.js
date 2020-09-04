@@ -17,7 +17,7 @@ export default class MainContainer extends Component {
             currentListings: [],
             loading: false,
             currentPage: 1,
-            listingsPerPage: 20,
+            listingsPerPage: 10,
             
 
             filterBy: 'All',
@@ -130,26 +130,26 @@ export default class MainContainer extends Component {
     }
 
     filterAc = (listings) => {
-        let indexOfLastListing = this.state.currentPage * this.state.listingsPerPage
-        let indexOfFirstListing = indexOfLastListing - this.state.listingsPerPage
-        let currentListings
-        
         let filterAc = this.state.ac
         
         if(filterAc === true){
-        currentListings = listings.filter(listing => listing.cooling === filterAc)
-        currentListings.slice(indexOfFirstListing, indexOfLastListing);
-        }
-        else{
-            currentListings = listings.slice(indexOfFirstListing, indexOfLastListing);
+            listings = listings.filter(listing => listing.cooling === filterAc)
         }
 
-        console.log(currentListings)
-        return currentListings
+        // this.setState({
+        //     currentListings: listings
+        // })
+
+        console.log(listings)
+        return listings
     }
     
 
     render() {
+
+        let indexOfLastListing = this.state.currentPage * this.state.listingsPerPage
+        let indexOfFirstListing = indexOfLastListing - this.state.listingsPerPage
+        let currentListings = this.state.currentListings.slice(indexOfFirstListing, indexOfLastListing);
 
 
         return (
@@ -170,7 +170,7 @@ export default class MainContainer extends Component {
                 listings={this.filterListings()} 
                 currentPage={this.state.currentPage}
                 listingsPerPage={this.state.listingsPerPage}
-                totalListings={this.state.listings.length} 
+                totalListings={currentListings.length} 
                 paginate={this.paginate}
                 />
             
