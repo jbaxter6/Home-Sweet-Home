@@ -24,7 +24,7 @@ export default class ListingForm extends Component {
             user_id: localStorage.userId,
             first_name: this.state.firstName,
             last_name: this.state.lastName,
-            contact_num: this.state.phoneNum,
+            contact_number: this.state.phoneNum,
             street_name: this.state.street,
             city: this.state.city,
             state: this.state.stATE,
@@ -53,7 +53,8 @@ export default class ListingForm extends Component {
             garage: this.state.garage,
             hoa: this.state.hoa,
             pet_friendly: this.state.petfriendly,
-            pet_size: this.state.petsize
+            pet_size: this.state.petsize,
+            likes: 0
         })
 
         })
@@ -66,7 +67,7 @@ export default class ListingForm extends Component {
             <div class="main-container">
                 <div class="form-cont">
                     <div class="ui segment">
-                            <form class="ui form">
+                            <form class="ui form" onSubmit={(e) => this.handleCreatedListing(e)}>
                                 <div class="ui two column very relaxed grid">
 
                                     <div class="column">
