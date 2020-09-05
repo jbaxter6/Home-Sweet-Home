@@ -6,6 +6,7 @@ import MainContainer from './containers/MainContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ListingForm from './components/ListingForm'
+import Slider from './components/Slider'
 import HeroContainer from './containers/HeroContainer'
 import UserContainer from './containers/UserContainer'
 import ShowContainer from './containers/ShowContainer'
@@ -45,7 +46,7 @@ export default class App extends React.Component {
       <div class="body">
         <NavBar logged={this.state.logged} toggle={this.toggleLogged} />
 
-            <Route exact path='/' render = {(routeProps) => <HeroContainer {...routeProps}  /> } />
+            <Route exact path='/' render = {(routeProps) => <Slider {...routeProps}  /> } />
 
             <Route path='/login' render = {(routeProps) => this.state.logged ? <Redirect to="/listings" /> : 
             <Login {...routeProps} toggle={this.toggleLogged} /> } />

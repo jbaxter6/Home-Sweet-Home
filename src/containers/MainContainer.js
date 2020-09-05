@@ -16,7 +16,7 @@ export default class MainContainer extends Component {
             listings: [],
             loading: false,
             currentPage: 1,
-            listingsPerPage: 4,
+            listingsPerPage: 12,
             
 
             filterBy: 'All',
