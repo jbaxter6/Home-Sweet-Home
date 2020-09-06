@@ -30,10 +30,10 @@ const Slider = () => {
 
     return (
 
-        <div className="slider">
+        <div className="carousel">
             {sliderArray.map((item, index) => {
                     return (
-                        <div key={index} className="slide" style={{transform: `translateX(${x}%)`}}>
+                        <div key={index} className="push" style={{transform: `translateX(${x}%)`}}>
                             {item}
                         </div>
                     )
