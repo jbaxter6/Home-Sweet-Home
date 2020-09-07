@@ -88,7 +88,7 @@ class ShowContainer extends Component {
 
                         <div class="ui vertical divider">
                             {
-                                localStorage.token ?
+                                localStorage.token && !this.state.showForm ?
                                 <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
                                 :
                                 <Fragment>and</Fragment>
@@ -98,6 +98,19 @@ class ShowContainer extends Component {
 
                     <div class="ui clearing divider"></div>
 
+                    {/* form conditionally renders based on button click */}
+                    {this.state.showForm ?
+                    <OfferForm listing={listing} formToggle={this.formToggle}/>
+                    :
+                    null
+                    }
+
+                    {this.state.showForm ?
+                    <div class="ui clearing divider"></div>
+                    :
+                    null
+                    }
+
                     <MapContainer 
                     street={listing.street_name}
                     city={listing.city}
@@ -105,12 +118,6 @@ class ShowContainer extends Component {
                     zip={listing.zip_code}
                     />
 
-                    {/* form conditionally renders based on button click */}
-                    {this.state.showForm ?
-                    <OfferForm listing={listing} />
-                    :
-                    null
-                    }
 
                 </div>
 

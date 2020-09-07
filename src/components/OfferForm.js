@@ -39,7 +39,14 @@ export default class OfferForm extends Component {
     render() {
         return (
             <div class="ui raised very padded text container segment">
-                        <h2 class="ui header">Offer Sheet</h2>
+                        <div>
+                            <div class='close'>
+                                <i class="close large icon" onClick={this.props.formToggle}></i>
+                            </div>
+                            <div>
+                                <h2 class="ui header">Offer Sheet</h2>
+                            </div>
+                        </div>
 
                         <form class="ui form" onSubmit={(e) => this.handleOffer(e)}>
 

@@ -162,42 +162,113 @@
 }
 
 .l.description {
+    color:whitesmoke;
+    padding-left:10px;
+    padding-right:10px;
     float:left; 
-    width:53px; 
+    width:104px; 
     height:20px; 
-    background-color:white; 
+    background-color:#FFCB15; 
     border: 1px solid #FFCB15;
     margin-left: 20px; 
-    margin-top:20px;
-    margin-bottom: 10px;
+    margin-top:10px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
+    box-shadow: 0 0 0 1px #FFCB15, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
 }
 
 .c.description {
+    color:whitesmoke;
+    padding-left:10px;
+    padding-right:10px;
     float:left; 
-    width:84px; 
+    width:75px; 
     height:20px; 
-    background-color:white;  
+    background-color:#FFCB15;  
     border:1px solid #FFCB15; 
-    margin-left:48px; 
-    margin-top:20px;
-    margin-bottom: 10px;
+    margin-left:15px; 
+    margin-top:10px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
+    box-shadow: 0 0 0 1px #FFCB15, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
 }
 
 .r.description {
+    color:whitesmoke;
+    padding-left:10px;
+    padding-right:10px;
     float:right; 
-    width:84px; 
+    width:104px; 
     height:20px; 
-    background-color:white; 
+    background-color:#FFCB15; 
     border:1px solid #FFCB15; 
     margin-right: 20px;
-    margin-top:20px;
-    margin-bottom: 10px;
+    margin-top:10px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
+    box-shadow: 0 0 0 1px #FFCB15, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
 }
 
+.address {
+    text-align:center;
+}
 
+.price {
+    margin-top: 10px;
+}
+
+.r.content {
+    float: right;
+}
+
+.ui.animated.yellow.button {
+    width: 200px;
+    margin-top: 10px;
+    
+}
+
+.l.content {
+    float: left;
+}
+
+.heart.big.icon {
+    color: black;
+}
+
+.heart.big.icon:hover {
+    color: red; 
+}
+
+.paw.large.icon {
+    color: black
+}
+
+.ui.four.cards {
+    margin-bottom: 20px;
+}
+
+.listing-cont {
+    text-align: center;
+}
+
+.ui.raised.very.padded.text.container.segment {
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.close {
+    float:right;
+}
+.close.large.icon:hover {
+    color:red;
+    cursor:pointer;
+}
+
+.ui.form {
+    margin-top:20px;
+}
+
+.ui.large.yellow.button {
+    margin-bottom:10px;
+}
