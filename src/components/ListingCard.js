@@ -25,39 +25,44 @@ export default class ListingCard extends Component {
 
                 </div>
 
-                <div class="content">
+                <div class="room-specs">
 
-                    <div class="left aligned description">
-                        {this.props.listing.bedrooms} bedrooms
+                    <div class="l description">
+                        <h4>Beds: {this.props.listing.bedrooms}</h4> 
                     </div>
 
                     {
                         this.props.listing.half_bathrooms > 1 ?
-                        <div class="center aligned description">
-                            {this.props.listing.half_bathrooms} half-baths
+                        <div class="c description">
+                            <h4>1/2 Baths: {this.props.listing.half_bathrooms}</h4> 
                         </div>
                         :
-                        <div class="center aligned description">
-                            {this.props.listing.half_bathrooms} half-bath
+                        <div class="c description">
+                            <h4>1/2 Baths: {this.props.listing.half_bathrooms}</h4>
                         </div>
                     }
 
                     {
                         this.props.listing.full_bathrooms > 1 ?
-                        <div class="right aligned description">
-                            {this.props.listing.full_bathrooms} full-baths
+                        <div class="r description">
+                            <h4>Full Baths: {this.props.listing.full_bathrooms}</h4>
                         </div>
                         :
-                        <div class="right aligned description">
-                            {this.props.listing.full_bathrooms} full-bath
+                        <div class="r description">
+                            <h4>Full Baths: {this.props.listing.full_bathrooms}</h4>
                         </div>
                     }
 
-                    <div class="meta">
-                        {this.props.listing.street_name}, {this.props.listing.city} {this.props.listing.state}, {this.props.listing.zip_code}
-                    </div>
-
                 </div>
+
+                    <div>
+                        <h4>{this.props.listing.street_name}</h4>
+                        <div class="meta">
+                            {this.props.listing.city}, {this.props.listing.state} {this.props.listing.zip_code}
+                        </div>
+                    </div>
+                    
+
 
                 <div class="extra content">
 

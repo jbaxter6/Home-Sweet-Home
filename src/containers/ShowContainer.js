@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import OfferForm from '../components/OfferForm'
+import MapContainer from './MapContainer'
 
 class ShowContainer extends Component {
 
@@ -96,6 +97,13 @@ class ShowContainer extends Component {
                     </div>
 
                     <div class="ui clearing divider"></div>
+
+                    <MapContainer 
+                    street={listing.street_name}
+                    city={listing.city}
+                    state={listing.state}
+                    zip={listing.zip_code}
+                    />
 
                     {/* form conditionally renders based on button click */}
                     {this.state.showForm ?
