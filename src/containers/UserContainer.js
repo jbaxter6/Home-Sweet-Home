@@ -39,7 +39,7 @@ export default class UserContainer extends Component {
 
     render() {
         return (
-            <div class="main-container">
+            <div class="user main-container">
 
             <div class="user-container">
 
@@ -75,10 +75,11 @@ export default class UserContainer extends Component {
                         :
                         null
                     }
-                    
+                <div class="ui four cards">
                 {
                 this.generateListing()
-                }
+                }  
+                </div>   
 
                 </div>
 

@@ -70,3 +70,32 @@
   margin-left: 470px;
   margin-top: 10px;
 }
+
+.foot-tag {
+  margin-top: 10px;
+}
+
+.asterisk.loading.big.icon {
+  color:#FFCB15;
+}
+
+.asterisk.loading.big.icon:hover {
+  color: black;
+}
+
+.github.large.icon:hover {
+  color:#FFCB15;
+}
+
+.linkedin.large.icon:hover {
+  color:#FFCB15;
+}
+
+.foot-tag {
+  color:black;
+}
+
+.foot-tag:hover {
+  color:#FFCB15;
+  cursor: pointer;
+}
