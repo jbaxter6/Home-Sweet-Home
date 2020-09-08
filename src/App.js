@@ -7,7 +7,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import ListingForm from './components/ListingForm'
 import Slider from './components/Slider'
-import HeroContainer from './containers/HeroContainer'
 import UserContainer from './containers/UserContainer'
 import ShowContainer from './containers/ShowContainer'
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';

@@ -64,92 +64,160 @@ class ShowContainer extends Component {
 
                                 <div class="column">
 
-                                    <div>
+                                    <div class="left detail container">
 
                                         <div>
-                                            <h5>Address:</h5>
-                                        </div>
 
-                                        <div>
-                                            <p>{listing.street_name}</p>
-                                        </div>
-                                        
-                                        <p>{listing.city}, {listing.state} {listing.zip_code}</p>
-
-                                    </div>
-
-                                    <div class="l details">
-
-                                        <div>
-                                            <h5>Asking Purchase Price:</h5>
-                                        </div>
-
-                                        <p>$ {listing.purchase_price}</p>
-
-                                    </div>
-
-
-                                    
-                                    {
-                                        listing.rent ?
-                                            <div class="l details">
                                             <div>
-                                            <h5>Asking Monthly Rent:</h5>
+                                                <h5>Address:</h5>
                                             </div>
-                                            <p>$ {listing.monthly_price} </p>
+
+                                            <div>
+                                                <p>{listing.street_name}</p>
                                             </div>
-                                        :
-                                            null
-                                    }
-                                        
-                                    
+                                            
+                                            <p>{listing.city}, {listing.state} {listing.zip_code}</p>
 
-                                    <div class="l details">
-                                        
-                                        <div>
-                                            <h5>Bedrooms:</h5>
                                         </div>
 
-                                        <p>{listing.bedrooms} Beds</p>
+                                        <div class="l details">
 
-                                    </div>
+                                            <div>
+                                                <h5>Asking Purchase Price:</h5>
+                                            </div>
 
-                                    <div class="l details">
-                                        
-                                        <div>
-                                            <h5>Half-Bathrooms:</h5>
+                                            <p>$ {listing.purchase_price}</p>
+
                                         </div>
 
-                                        <p>{listing.half_bathrooms} Half-Baths</p>
 
-                                    </div>
-
-                                    <div class="l details">
                                         
-                                        <div>
-                                            <h5>Full-Bathrooms:</h5>
+                                        {
+                                            listing.rent ?
+                                                <div class="l details">
+                                                <div>
+                                                <h5>Asking Monthly Rent:</h5>
+                                                </div>
+                                                <p>$ {listing.monthly_price} </p>
+                                                </div>
+                                            :
+                                                null
+                                        }
+                                            
+                                        
+
+                                        <div class="l details">
+                                            
+                                            <div>
+                                                <h5>Bedrooms:</h5>
+                                            </div>
+
+                                            <p>{listing.bedrooms} Beds</p>
+
                                         </div>
 
-                                        <p>{listing.full_bathrooms} Baths</p>
+                                        <div class="l details">
+                                            
+                                            <div>
+                                                <h5>Half-Bathrooms:</h5>
+                                            </div>
+
+                                            <p>{listing.half_bathrooms} Half-Baths</p>
+
+                                        </div>
+
+                                        <div class="l details">
+                                            
+                                            <div>
+                                                <h5>Full-Bathrooms:</h5>
+                                            </div>
+
+                                            <p>{listing.full_bathrooms} Baths</p>
+
+                                        </div>
+
+                                        
 
                                     </div>
-
 
                                 </div>
 
-                                <div class="r column">
+                                <div class="column">
 
-                                   
+                                    <div class="right detail container">
 
-                                    <div class="r details">
+                                            <div>
+                                            
+                                            <div>
+                                                
+                                                <div>
+                                                    <h5>Style of Home:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.type_of_house}</p>
+                                                </div>
+
+                                            </div>
+                                            
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Square Footage:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.sq_foot} Sq. Ft.</p>
+                                                </div>
+
+                                            </div>
+                                            
                                         
-                                        <div>
-                                            <h5>Full-Bathrooms:</h5>
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Nearest Elementary School:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.nearest_elementary} Elementary School</p>
+                                                </div>
+
+                                            </div>
+
+                                            
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Nearest Middle School:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.nearest_middle} Middle School</p>
+                                                </div>
+
+                                            </div>
+
+                                            
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Nearest High School:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.nearest_high} Senior High School</p>
+                                                </div>
+
+                                            </div>
+
                                         </div>
 
-                                        <p>{listing.full_bathrooms} Baths</p>
-
                                     </div>
+
                                 </div>
 
                             </div>

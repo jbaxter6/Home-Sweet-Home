@@ -125,6 +125,15 @@ export default class MainContainer extends Component {
         if(filterProp !== "All")
             listings = listings.filter(listing => listing.type_of_house === filterProp)
 
+        return this.filterState(listings)
+    }
+
+    filterState = (listings) => {
+        let filterState = this.state.filterState
+
+        if(filterState != "All")
+            listings = listings.filter(listing => listing.state === filterState)
+
         return this.filterCond(listings)
     }
 
@@ -210,6 +219,8 @@ export default class MainContainer extends Component {
                 <FilterContainer 
                 changeFilter={this.changePropType} 
                 changeCond={this.changeCond} 
+                changeState={this.changeState}
+
                 sortPark={this.sortPark}
                 sortHeat={this.sortHeat}
                 sortAc={this.sortAc}
