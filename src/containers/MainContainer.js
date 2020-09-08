@@ -21,9 +21,15 @@ export default class MainContainer extends Component {
 
             filterBy: 'All',
             filterCond: 'All',
+            filterState: 'All',
+
             parking: false,
             heating: false,
-            ac: false
+            ac: false,
+            pet: false,
+            hoa: false,
+            garage: false,
+
         }
     }
 
@@ -66,6 +72,12 @@ export default class MainContainer extends Component {
         })
     }
 
+    changeState = (value) => {
+        this.setState({
+            filterState: value
+        })
+    }
+
     sortPark = (value) => {
         this.setState({
             parking: value
@@ -84,16 +96,30 @@ export default class MainContainer extends Component {
         })
     }
 
+    sortPet = (value) => {
+        this.setState({
+            pet: value
+        })
+    }
+
+    sortHoa = (value) => {
+        this.setState({
+            hoa: value
+        })
+    }
+
+    sortGarage = (value) => {
+        this.setState({
+            garage: value
+        })
+    }
 
 
     // filter and sort based on state
 
-
-
     filterListings = () => {
         let listings = [...this.state.listings]
 
-        
         let filterProp = this.state.filterBy
     
         if(filterProp !== "All")
@@ -106,6 +132,33 @@ export default class MainContainer extends Component {
         let filterCond = this.state.filterCond
         if(filterCond !== "All")
             listings = listings.filter(listing => listing.condition === filterCond)
+
+        return this.filterPet(listings)
+    }
+
+    filterPet = (listings) => {
+        let filterPet = this.state.pet
+
+        if(filterPet === true)
+            listings = listings.filter(listing => listing.pet_friendly === filterPet)
+
+        return this.filterGarage(listings)
+    }
+
+    filterGarage = (listings) => {
+        let filterGarage = this.state.garage
+
+        if(filterGarage === true)
+            listings = listings.filter(listing => listing.garage === filterGarage)
+
+        return this.filterHoa(listings)
+    }
+
+    filterHoa = (listings) => {
+        let filterHoa = this.state.hoa
+
+        if(filterHoa === true)
+            listings = listings.filter(listing => listing.hoa === filterHoa)
 
         return this.filterParking(listings)
     }
@@ -160,9 +213,16 @@ export default class MainContainer extends Component {
                 sortPark={this.sortPark}
                 sortHeat={this.sortHeat}
                 sortAc={this.sortAc}
+                sortPet={this.sortPet}
+                sortHoa={this.sortHoa}
+                sortGarage={this.sortGarage}
+
                 parking={this.state.parking}
                 heating={this.state.heating}
                 ac={this.state.ac}
+                pet={this.state.pet}
+                hoa={this.state.hoa}
+                garage={this.state.garage}
                 />
 
                 <ListingContainer 

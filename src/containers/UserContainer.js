@@ -75,13 +75,16 @@ export default class UserContainer extends Component {
                         :
                         null
                     }
-                <div class="ui four cards">
+                <div class="ui cards">
                 {
                 this.generateListing()
                 }  
                 </div>   
 
                 </div>
+
+                <br></br>
+                <br></br>
 
                 <div className="your-offers-container">
 

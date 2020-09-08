@@ -1,14 +1,62 @@
 import React, { Component } from 'react'
 import {APIBASE} from '../constants/apiBase'
 import {Link} from 'react-router-dom'
+import FormErrors from './FormErrors'
 
 export default class ListingForm extends Component {
+
+    state = {
+        firstName: '',
+        lastName: '',
+        phoneNum: '',
+        street: '',
+        city: '',
+        zip: '',
+
+        formErrors: {},
+        formValid: false
+    }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        }, this.validateForm)
     }
+
+    validateForm = () => {
+        let formErrors = {}
+        let formValid = true
+        if(this.state.firstName.length < 0) {
+            formErrors.first_name = ["First name must be present"]
+            formValid = false
+        }
+
+        else if(this.state.lastName.length < 0) {
+            formErrors.last_name = ["Last name must be present"]
+            formValid = false
+        }
+
+        else if(this.state.phoneNum.length <= 10) {
+            formErrors.phone_num = ["Phone Number must be at least 10 digits"]
+            formValid = false
+        }
+
+        else if(!this.state.street) {
+            formErrors.email = ["Street is required for posted listing"]
+            formValid = false
+        }
+
+        else if(this.state.city) {
+            formErrors.email = ["City is required for posted listing"]
+            formValid = false
+        }
+
+        this.setState({formValid: formValid, formErrors: formErrors})
+    }
+
+    resetFormErrors = () => {
+        this.setState({formErrors: {}})
+    };
 
     handleCreatedListing = (e) => {
         e.preventDefault()
@@ -58,6 +106,8 @@ export default class ListingForm extends Component {
         })
 
         })
+
+        this.resetFormErrors()
 
         e.target.reset()
     }
@@ -389,8 +439,10 @@ export default class ListingForm extends Component {
 
                                 </div>
 
+                                <FormErrors formErrors={this.state.formErrors}/>
+
                                 <div class="button-list">
-                                    <button class="ui yellow massive button" type="submit">Post House</button>
+                                    <button class="ui yellow massive button" type="submit" disabled={!this.state.formValid}>Post House</button>
                                 </div>
                             </form>
 

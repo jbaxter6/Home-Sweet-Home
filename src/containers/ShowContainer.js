@@ -61,27 +61,95 @@ class ShowContainer extends Component {
 
                     <div class="ui segment">
                         <div class="ui two column very relaxed grid">
+
                                 <div class="column">
 
                                     <div>
-                                        <h5>Address:</h5>
-                                        <p>{listing.street_name}</p>
+
+                                        <div>
+                                            <h5>Address:</h5>
+                                        </div>
+
+                                        <div>
+                                            <p>{listing.street_name}</p>
+                                        </div>
+                                        
                                         <p>{listing.city}, {listing.state} {listing.zip_code}</p>
-                                    </div>
-                                    <div>
-                                        <h5>SquareFt:</h5>
-                                        <p>{listing.sq_foot} Sq.Ft.</p>
+
                                     </div>
 
-                                    <div>
-                                        <h5>SquareFt:</h5>
-                                        <p>{listing.sq_foot} Sq.Ft.</p>
+                                    <div class="l details">
+
+                                        <div>
+                                            <h5>Asking Purchase Price:</h5>
+                                        </div>
+
+                                        <p>$ {listing.purchase_price}</p>
+
                                     </div>
+
+
+                                    
+                                    {
+                                        listing.rent ?
+                                            <div class="l details">
+                                            <div>
+                                            <h5>Asking Monthly Rent:</h5>
+                                            </div>
+                                            <p>$ {listing.monthly_price} </p>
+                                            </div>
+                                        :
+                                            null
+                                    }
+                                        
+                                    
+
+                                    <div class="l details">
+                                        
+                                        <div>
+                                            <h5>Bedrooms:</h5>
+                                        </div>
+
+                                        <p>{listing.bedrooms} Beds</p>
+
+                                    </div>
+
+                                    <div class="l details">
+                                        
+                                        <div>
+                                            <h5>Half-Bathrooms:</h5>
+                                        </div>
+
+                                        <p>{listing.half_bathrooms} Half-Baths</p>
+
+                                    </div>
+
+                                    <div class="l details">
+                                        
+                                        <div>
+                                            <h5>Full-Bathrooms:</h5>
+                                        </div>
+
+                                        <p>{listing.full_bathrooms} Baths</p>
+
+                                    </div>
+
 
                                 </div>
 
-                                <div class="column">
-                                    <p></p>
+                                <div class="r column">
+
+                                   
+
+                                    <div class="r details">
+                                        
+                                        <div>
+                                            <h5>Full-Bathrooms:</h5>
+                                        </div>
+
+                                        <p>{listing.full_bathrooms} Baths</p>
+
+                                    </div>
                                 </div>
 
                             </div>

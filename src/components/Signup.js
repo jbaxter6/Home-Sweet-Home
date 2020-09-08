@@ -1,13 +1,54 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import FormErrors from './FormErrors'
 
 export default class Signup extends Component {
+
+    state = {
+        username: '',
+        password: '',
+        email: '',
+        image: '',
+        description: '',
+        formErrors: {},
+        formValid: false
+    }
     
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        }, this.validateForm)
     }
+
+    validateForm = () => {
+        let formErrors = {}
+        let formValid = true
+        if(this.state.username.length < 6) {
+            formErrors.username = ["Username must be more than 6 characters"]
+            formValid = false
+        }
+
+        else if(this.state.password.length < 0) {
+            formErrors.password = ["Password must be at least 7 characters"]
+            formValid = false
+        }
+
+        else if(!this.state.email.includes("@")) {
+            formErrors.email = ["Email must be valid"]
+            formValid = false
+        }
+
+        else if(this.state.email.length < 4) {
+            formErrors.email = ["Email must be valid"]
+            formValid = false
+        }
+
+        this.setState({formValid: formValid, formErrors: formErrors})
+    }
+
+    resetFormErrors = () => {
+        this.setState({formErrors: {}})
+    };
     
     handleSignUp = (e) => {
         e.preventDefault()
@@ -34,8 +75,11 @@ export default class Signup extends Component {
             localStorage.username = user.user.username
             localStorage.userId = user.user.id
         })
+
+        this.resetFormErrors()
         
         this.props.toggle()
+
         e.target.reset()
     }
 
@@ -66,6 +110,9 @@ export default class Signup extends Component {
                             <label>Create your password</label>
                             <input type="password" name="password" placeholder="Password..." onChange={this.handleChange}></input>
                         </div>
+
+                        <FormErrors formErrors={this.state.formErrors}/>
+
                         <button class="ui yellow button" type="submit">Submit</button>
                         
                         <div class="ui message">
