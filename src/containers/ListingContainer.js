@@ -15,7 +15,13 @@ export default class ListingContainer extends Component {
             <div class="listing-cont">
 
                 <div class="cont-header">
-                    <h1> Active Listings </h1>
+                    <div>
+                        <h1> Active Listings </h1>
+                    </div>
+
+                    <div class="page">
+                        <h3> Page {this.props.currentPage} </h3>
+                    </div>
                 </div>
 
                 <div class="ui four cards">

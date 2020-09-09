@@ -34,7 +34,7 @@ export default class OfferForm extends Component {
             formValid = false
         }
 
-        else if(this.state.phone_num.length <= 10) {
+        else if(this.state.phone_num.length <= 9) {
             formErrors.phone_num = ["Phone Number must be at least 10 digits"]
             formValid = false
         }

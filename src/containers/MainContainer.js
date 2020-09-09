@@ -29,6 +29,8 @@ export default class MainContainer extends Component {
             pet: false,
             hoa: false,
             garage: false,
+            rent: false,
+            sale: false
 
         }
     }
@@ -114,6 +116,18 @@ export default class MainContainer extends Component {
         })
     }
 
+    sortRent = (value) => {
+        this.setState({
+            rent: value
+        })
+    }
+
+    sortSale = (value) => {
+        this.setState({
+            sale: value
+        })
+    }
+
 
     // filter and sort based on state
 
@@ -141,6 +155,25 @@ export default class MainContainer extends Component {
         let filterCond = this.state.filterCond
         if(filterCond !== "All")
             listings = listings.filter(listing => listing.condition === filterCond)
+
+        return this.filterSale(listings)
+    }
+
+    filterSale = (listings) => {
+        let filterSale = this.state.sale
+
+        if(filterSale === true)
+            listings = listings.filter(listing => listing.buy === filterSale)
+
+        return this.filterRent(listings)
+
+    }
+
+    filterRent = (listings) => {
+        let filterRent = this.state.rent
+
+        if(filterRent === true)
+            listings = listings.filter(listing => listing.rent === filterRent)
 
         return this.filterPet(listings)
     }
@@ -227,7 +260,11 @@ export default class MainContainer extends Component {
                 sortPet={this.sortPet}
                 sortHoa={this.sortHoa}
                 sortGarage={this.sortGarage}
+                sortRent={this.sortRent}
+                sortSale={this.sortSale}
 
+                sale={this.state.sale}
+                rent={this.state.rent}
                 parking={this.state.parking}
                 heating={this.state.heating}
                 ac={this.state.ac}

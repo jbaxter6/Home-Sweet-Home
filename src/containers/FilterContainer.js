@@ -116,6 +116,24 @@ export default class FilterContainer extends Component {
 
                     <div class="tog">
                         <div class="ui toggle yellow checkbox">
+                            <input type="checkbox" value="sale" checked={this.props.sale} onChange={(e) => this.props.sortSale(e.target.checked)}></input>
+                            <label>For-Sale</label>
+                        </div>
+                    </div>
+
+                    <div class="ui clearing divider"></div>
+
+                    <div class="tog">
+                        <div class="ui toggle yellow checkbox">
+                            <input type="checkbox" value="rent" checked={this.props.rent} onChange={(e) => this.props.sortRent(e.target.checked)}></input>
+                            <label>For-Rent</label>
+                        </div>
+                    </div>
+
+                    <div class="ui clearing divider"></div>
+
+                    <div class="tog">
+                        <div class="ui toggle yellow checkbox">
                             <input type="checkbox" value="pet" checked={this.props.pet} onChange={(e) => this.props.sortPet(e.target.checked)}></input>
                             <label>Pet-friendly</label>
                         </div>

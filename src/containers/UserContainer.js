@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Container.css'
-import ListingCard from '../components/ListingCard'
+import YourListingCard from '../components/YourListingCard'
 import OfferCard from '../components/OfferCard'
 
 export default class UserContainer extends Component {
@@ -26,7 +26,7 @@ export default class UserContainer extends Component {
     
     generateListing = () => {
         return this.state.user.listings.map(listing =>  
-            <ListingCard listing={listing} />
+            <YourListingCard listing={listing} />
             )
     }
 
@@ -75,11 +75,12 @@ export default class UserContainer extends Component {
                         :
                         null
                     }
-                <div class="ui cards">
-                {
-                this.generateListing()
-                }  
-                </div>   
+                    
+                    <div class="ui cards">
+                    {
+                    this.generateListing()
+                    }  
+                    </div>   
 
                 </div>
 

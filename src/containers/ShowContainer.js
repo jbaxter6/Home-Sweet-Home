@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import OfferForm from '../components/OfferForm'
 import MapContainer from './MapContainer'
+import numberWithCommas from '../helpers/numberWithCommas.js'
 
 class ShowContainer extends Component {
 
@@ -9,7 +10,10 @@ class ShowContainer extends Component {
         super(props)
     
         this.state = {
-            listing: {},
+            listing: {
+                purchase_price: '',
+                monthly_price: ''
+            },
             showForm: false
         }
     }
@@ -86,11 +90,21 @@ class ShowContainer extends Component {
                                                 <h5>Asking Purchase Price:</h5>
                                             </div>
 
-                                            <p>$ {listing.purchase_price}</p>
+                                            <p>${numberWithCommas(listing.purchase_price)}</p>
 
                                         </div>
 
-
+                                        {
+                                            listing.rent ?
+                                                <div class="l details">
+                                                <div>
+                                                <h5>Available for Rent:</h5>
+                                                </div>
+                                                <p>Yes</p>
+                                                </div>
+                                            :
+                                                null
+                                        }
                                         
                                         {
                                             listing.rent ?
@@ -98,7 +112,7 @@ class ShowContainer extends Component {
                                                 <div>
                                                 <h5>Asking Monthly Rent:</h5>
                                                 </div>
-                                                <p>$ {listing.monthly_price} </p>
+                                                <p>${numberWithCommas(listing.monthly_price)} </p>
                                                 </div>
                                             :
                                                 null
@@ -136,8 +150,44 @@ class ShowContainer extends Component {
 
                                         </div>
 
-                                        
+                                        <div class="l details">
+                                            
+                                            <div>
+                                                <h5>Nearest Elementary School:</h5>
+                                            </div>
 
+                                            <div>
+                                                <p>{listing.nearest_elementary} Elementary School</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="l details">
+
+                                            <div>
+                                                <h5>Nearest Middle School:</h5>
+                                            </div>
+
+                                            <div class="right detail">
+                                                <p>{listing.nearest_middle} Middle School</p>
+                                            </div>
+                                        
+                                        </div>
+
+                                        <div class="l details">
+
+                                            <div>
+                                                <h5>Nearest High School:</h5>
+                                            </div>
+
+                                            <div class="right detail">
+                                                <p>{listing.nearest_high} Senior High School</p>
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
                                     </div>
 
                                 </div>
@@ -159,6 +209,30 @@ class ShowContainer extends Component {
                                                 </div>
 
                                             </div>
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Year Built:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.year_built}</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Condition:</h5>
+                                                </div>
+
+                                                <div class="right detail">
+                                                    <p>{listing.condition}</p>
+                                                </div>
+
+                                            </div>
                                             
                                             <div class="details">
                                                 
@@ -171,48 +245,127 @@ class ShowContainer extends Component {
                                                 </div>
 
                                             </div>
-                                            
+
+
+                                            {
+                                            listing.rent ?
+                                                <div class="details">
+                                                <div>
+                                                <h5>Smoke Friendly:</h5>
+                                                </div>
+                                                
+                                                {
+                                                listing.smoker ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                                }
+                    
+                                                </div>
+                                            :
+                                                null
+                                            }
+
+                                            {
+                                            listing.rent ?
+                                                <div class="details">
+                                                <div>
+                                                <h5>Pet Friendly:</h5>
+                                                </div>
+                                                
+                                                {
+                                                listing.pet_friendly ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                                }
+                    
+                                                </div>
+                                            :
+                                                null
+                                            }
                                         
 
-                                            <div class="details">
-                                                
-                                                <div>
-                                                    <h5>Nearest Elementary School:</h5>
-                                                </div>
 
-                                                <div class="right detail">
-                                                    <p>{listing.nearest_elementary} Elementary School</p>
-                                                </div>
+
+                                            <div class="details">
+
+                                            <div>
+                                                <h5>HOA:</h5>
+                                            </div>
+
+                                            {
+                                                listing.hoa ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                            }
 
                                             </div>
 
+                                            <div class="details">
+
+                                            <div>
+                                                <h5>Parking:</h5>
+                                            </div>
+
+                                            {
+                                                listing.parking ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                            }
+
+                                            </div>
+
+                                            <div class="details">
+
+                                            <div>
+                                                <h5>Garage:</h5>
+                                            </div>
+
+                                            {
+                                                listing.garage ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                            }
+
+                                            </div>
+
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Heating:</h5>
+                                                </div>
+
+                                                {
+                                                listing.heating ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                            }
+
+                                            </div>
+
+                                            <div class="details">
+                                                
+                                                <div>
+                                                    <h5>Cooling:</h5>
+                                                </div>
+
+                                                {
+                                                listing.cooling ?
+                                                <p>Yes</p>
+                                                :
+                                                <p>No</p>
+                                            }
+
+                                            </div>
                                             
 
-                                            <div class="details">
-                                                
-                                                <div>
-                                                    <h5>Nearest Middle School:</h5>
-                                                </div>
-
-                                                <div class="right detail">
-                                                    <p>{listing.nearest_middle} Middle School</p>
-                                                </div>
-
-                                            </div>
-
                                             
-
-                                            <div class="details">
-                                                
-                                                <div>
-                                                    <h5>Nearest High School:</h5>
-                                                </div>
-
-                                                <div class="right detail">
-                                                    <p>{listing.nearest_high} Senior High School</p>
-                                                </div>
-
-                                            </div>
 
                                         </div>
 

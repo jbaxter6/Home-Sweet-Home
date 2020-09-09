@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {APIBASE} from '../constants/apiBase'
+import numberWithCommas from '../helpers/numberWithCommas.js'
 
 export default class ListingCard extends Component {
 
@@ -24,7 +25,7 @@ export default class ListingCard extends Component {
         return (
             <div class="ui raised link card">
 
-                <div class="ui slide masked reveal image">
+                <div class="listing ui slide masked reveal image">
 
                     <img src={this.props.listing.image} class="visible content" alt="image1"></img>
                     <img src={this.props.listing.image_2} class="hidden content" alt="image2"></img>
@@ -51,7 +52,7 @@ export default class ListingCard extends Component {
                             {this.props.listing.city}, {this.props.listing.state} {this.props.listing.zip_code}
                         </div>
                         <div class="price">
-                            <h1>${this.props.listing.purchase_price}</h1>
+                            <h1>${numberWithCommas(this.props.listing.purchase_price)}</h1>
                         </div>
                 </div>
 
