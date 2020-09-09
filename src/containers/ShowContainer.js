@@ -14,7 +14,8 @@ class ShowContainer extends Component {
                 purchase_price: '',
                 monthly_price: ''
             },
-            showForm: false
+            showForm: false,
+            submittedOffer: false
         }
     }
     
@@ -35,6 +36,22 @@ class ShowContainer extends Component {
         this.setState({
             showForm: !this.state.showForm
         })
+    }
+
+    submittedOffer = () => {
+        this.setState({
+            submittedOffer: !this.state.submittedOffer
+        })
+    }
+
+    makeOfferButton = () => {
+        
+        if(localStorage.token && !this.state.showForm && !this.state.submittedOffer){
+                return <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
+        }
+        else{
+            return <Fragment>and</Fragment>
+        }
     }
 
     render() {
@@ -118,8 +135,6 @@ class ShowContainer extends Component {
                                                 null
                                         }
                                             
-                                        
-
                                         <div class="l details">
                                             
                                             <div>
@@ -376,12 +391,15 @@ class ShowContainer extends Component {
                             </div>
 
                         <div class="ui vertical divider">
+
                             {
-                                localStorage.token && !this.state.showForm ?
-                                <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
-                                :
-                                <Fragment>and</Fragment>
+                                this.makeOfferButton()
+                                // ((localStorage.token && !this.state.showForm) || (!this.state.submittedOffer))?
+                                // <button class="ui large yellow button" type="submit" onClick={this.formToggle}>Make Offer</button>
+                                // :
+                                // <Fragment>and</Fragment>
                             }
+
                         </div>
                     </div>
 
@@ -389,7 +407,7 @@ class ShowContainer extends Component {
 
                     {/* form conditionally renders based on button click */}
                     {this.state.showForm ?
-                    <OfferForm listing={listing} formToggle={this.formToggle}/>
+                    <OfferForm listing={listing} formToggle={this.formToggle} submittedOffer={this.submittedOffer}/>
                     :
                     null
                     }

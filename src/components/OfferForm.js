@@ -82,6 +82,8 @@ export default class OfferForm extends Component {
 
         this.resetFormErrors()
 
+        this.props.submittedOffer()
+
         this.props.formToggle()
 
         e.target.reset()
