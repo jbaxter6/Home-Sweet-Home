@@ -2,26 +2,30 @@ import React, { Component } from 'react'
 import {APIBASE} from '../constants/apiBase';
 
 export default class YourListingCard extends Component {
-
+    
+    
+    
     deleteListing = () => {
 
+        const card = document.querySelector(".card")
+
+        
         fetch(APIBASE + `listings/${this.props.listing.id}`, {
-        method: 'DELETE',
-        headers: {
+            method: 'DELETE',
+            headers: {
             "Content-Type": "application/json",
             "accept": "application/json",
             "Authorization": `Bearer ${localStorage.token}`
-        }
+            }
         })
-        .then(resp => resp.json())
-        .then(
-            window.location.reload(true)
-        )
-        
-    }
 
+        card.remove()
     
-    render() {
+            
+        }
+        
+        
+        render() {
         return (
             <div class="card">
                 <div class="content">

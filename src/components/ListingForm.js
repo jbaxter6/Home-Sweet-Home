@@ -12,6 +12,14 @@ export default class ListingForm extends Component {
         street: '',
         city: '',
         zip: '',
+        desc: '',
+        rent: 'null',
+        rentPrice: 0,
+        selling: 'null',
+        sellPrice: 0,
+        cond: 'null',
+        propType: 'null',
+        year: null,
 
         formErrors: {},
         formValid: false
@@ -36,7 +44,7 @@ export default class ListingForm extends Component {
             formValid = false
         }
 
-        else if(this.state.phoneNum.length <= 10) {
+        else if(this.state.phoneNum.length <= 9) {
             formErrors.phone_num = ["Phone Number must be at least 10 digits"]
             formValid = false
         }
@@ -46,8 +54,43 @@ export default class ListingForm extends Component {
             formValid = false
         }
 
-        else if(this.state.city) {
-            formErrors.email = ["City is required for posted listing"]
+        else if(!this.state.city) {
+            formErrors.city = ["City is required for posted listing"]
+            formValid = false
+        }
+
+        else if (this.state.rent === "null"){
+            formErrors.rent = ["Specify whether you would like your property to be listed as a rentable"]
+            formValid = false
+        }
+
+        else if(this.state.rent === "true" && this.state.rentPrice <= 0){
+            formErrors.rentPrice = ["Property that is listed as up for rent must specify a monthly cost"]
+            formValid = false
+        }
+
+        else if (this.state.selling === "null"){
+            formErrors.rent = ["Specify whether you would like your property to be listed as for-sale"]
+            formValid = false
+        }
+
+        else if(this.state.selling === "true" && this.state.sellPrice <= 0){
+            formErrors.rentPrice = ["Property that is listed as up for sale must specify an asking-price"]
+            formValid = false
+        }
+
+        else if (this.state.cond === "null"){
+            formErrors.cond = ["Specify the condition of your listing"]
+            formValid = false
+        }
+
+        else if (this.state.propType === "null"){
+            formErrors.propType = ["Specify the type of property you will be listing"]
+            formValid = false
+        }
+
+        else if(this.state.desc.length <= 99) {
+            formErrors.desc = ["Describe your listing with at least 100 characters"]
             formValid = false
         }
 
@@ -116,6 +159,10 @@ export default class ListingForm extends Component {
         return (
             <div class="main-container">
                 <div class="form-cont">
+                    <div class="list-house-header">
+                        <h1>Time to put your Property on the Market?</h1>
+                    </div>
+                    
                     <div class="ui segment">
                             <form class="ui form" onSubmit={(e) => this.handleCreatedListing(e)}>
                                 <div class="ui two column very relaxed grid">
@@ -265,7 +312,7 @@ export default class ListingForm extends Component {
                                             <div class="field">
                                                 <label>Condition</label>
                                                 <select class="ui compact dropdown" name="cond" onChange={this.handleChange}>
-                                                    <option value=""></option>
+                                                    <option value="null"></option>
                                                     <option value="New">New</option>
                                                     <option value="Vintage">Vintage</option>
                                                     <option value="Fixer-Upper">Fixer-Upper</option>
@@ -275,7 +322,7 @@ export default class ListingForm extends Component {
                                             <div class="field">
                                                 <label>Property Type</label>
                                                 <select class="ui compact dropdown" name="propType" onChange={this.handleChange}>
-                                                    <option value=""></option>
+                                                    <option value="null"></option>
                                                     <option value="Single-Family">Single-Family</option>
                                                     <option value="Condominium">Condominium</option>
                                                     <option value="Townhouse">Townhouse</option>
@@ -440,6 +487,8 @@ export default class ListingForm extends Component {
                                 </div>
 
                                 <FormErrors formErrors={this.state.formErrors}/>
+                                
+                                <Link to="/account"><p class="redirect-link">Not ready to list your property? </p> </Link>
 
                                 <div class="button-list">
                                     <button class="ui yellow massive button" type="submit" disabled={!this.state.formValid}>Post House</button>

@@ -41,11 +41,11 @@ export default class NavBar extends Component {
                 null   
                 }
                 
-                {this.props.logged ?
+                {/* {this.props.logged ?
                 <a href="/apply" class="yellow item">Apply for Loan</a> 
                 : 
                 null
-                }
+                } */}
 
                 {this.props.logged ?
                 <a href="/" class="yellow item" onClick={this.logout}>Log Out</a> 

@@ -19,6 +19,7 @@ export default class App extends React.Component {
   
     this.state = {
       logged: false,
+      submittedForm: false,
       listings: []
     }
   }

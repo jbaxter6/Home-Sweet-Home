@@ -41,9 +41,67 @@ export default class UserContainer extends Component {
         return (
             <div class="user main-container">
 
-            <div class="user-container">
+                <div class="user-container">
 
-                <div class="user-card" >
+                    <div class="user ui card">
+                        <div class="image-c">
+                            <img class="card ui image" src={this.state.user.image}></img>
+                        </div>
+                        <div class="user content">
+                            <div>
+                                <h4> Username: </h4>
+                                {this.state.user.username}
+                            </div>
+                            <div class="user d">
+                                <h4> E-mail: </h4>{this.state.user.email}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="your-listing-cont">
+
+                    {
+                        this.state.user.listings.length > 0 ?
+                            <div>
+                                <div >
+                                    <h1>Your Properties</h1>
+                                </div>
+                                    <div class="list offer ui cards">
+                                        {
+                                            this.generateListing()
+                                        }  
+                                    </div>  
+                            </div>
+                        :
+                        null
+                    }
+
+                    {
+                        this.state.user.offers.length > 0 ?
+                            <div >
+                                <h1>Your Offers</h1>
+                                    <div class="list offer ui cards">
+                                    {
+                                        this.generateOffer()
+                                    }
+                                    </div>  
+                            </div>
+                        :
+                        null
+                    }
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        )
+    }
+}
+
+
+{/* <div class="user-card" >
                     <div class="image-c">
                         <img class="card ui image" src={this.state.user.image} alt="user"></img>
                     </div>
@@ -103,10 +161,4 @@ export default class UserContainer extends Component {
                 }
 
                     </div>
-                </div>
-            </div>
-
-            </div>
-        )
-    }
-}
+                </div> */}

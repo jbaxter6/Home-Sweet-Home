@@ -93,7 +93,7 @@ export default class ListingCard extends Component {
 
                     <div class="l content">
                         <i class="heart big icon" onClick={this.handleLike}></i>
-                        {this.props.listing.likes} 
+                        {/* {this.props.listing.likes}  */}
                     </div>
 
 

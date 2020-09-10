@@ -14,7 +14,32 @@
     margin-bottom: 100px;
 }
 
+/* listing form */
 
+.redirect-link {
+    color: black;
+    margin-left: 427px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.redirect-link:hover {
+    color: #FFCB15;
+    margin-left: 427px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list-house-header {
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 290px;
+    background-color: #FFCB15;
+    width: 30vw;
+    border: 1px solid #FFC199;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #FFCB15, 0 2px 4px 0 #FFCB15, 0 2px 10px 0 #FFCB15;
+}
 
 .listing-cont {
     background-color: white;
@@ -55,7 +80,8 @@
     padding-right: 50px;
     padding-top: 40px;
     padding-bottom: 50px;
-    align-items:center;
+    text-align: center;
+    
 }
 
 .listing.ui.slide.masked.reveal.image {
@@ -127,27 +153,40 @@
     align-items:center;
 }
 
-.user-card {
-    margin-left:105px;
-    display: flex;
-    flex-direction: row;
+.user.ui.card {
     border: 1px solid#DCDCDC;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
-    width: 50vw;
-    height:33vh;
+    height: 400px;
+    display:inline-block;
+}
+
+.user.content {
+    text-align: center;
+}
+
+.user.d {
+    margin-top: 8px;
+}
+
+.your-listing-cont {
+    border: 1px solid#DCDCDC;
+    text-align: center;
+    padding: 30px;
+    width: auto;
+    height: auto;
+    margin-top: 30px;
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 10px 0 #FFCB15, 0 2px 10px 0 #FFCB15; 
+}
+
+.list.offer.ui.card {
+    text-align: center;
 }
 
 .image-c {
-    margin-left: 20px;
-    margin-bottom: 13px;
-    margin-top: 13px;
     position: relative;
     display: block;
     flex: 0 0 auto;
     padding: 0;
     background: rgba(0,0,0,.05);
-    width: 15vw;
     border-radius: 5px;
     border: 1px solid#DCDCDC;
     object-fit: fill;
@@ -155,9 +194,10 @@
 }
 
 .card.ui.image {
-    width: 100%;
-    height: 100%
+    height: 250px;
 }
+
+
 
 .desc-c {
     display: inline-block;
@@ -391,4 +431,5 @@
 .tog {
     margin-top: 5px;
 }
+
 
