@@ -45,7 +45,7 @@ export default class UserContainer extends Component {
 
                     <div class="user ui card">
                         <div class="image-c">
-                            <img class="card ui image" src={this.state.user.image}></img>
+                            <img class="card ui medium circular image" src="https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></img>
                         </div>
                         <div class="user content">
                             <div>

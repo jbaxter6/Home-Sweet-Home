@@ -207,14 +207,14 @@
     display: block;
     flex: 0 0 auto;
     padding: 0;
-    background: rgba(0,0,0,.05);
+    background: #FFCB15;
     border-radius: 5px;
-    border: 1px solid#DCDCDC;
+    border: 1px solid#FFCB15;
     object-fit: fill;
     max-width:100%;
 }
 
-.card.ui.image {
+.card.ui.medium.circular.image {
     height: 250px;
 }
 
