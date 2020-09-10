@@ -2,6 +2,8 @@
     border: aqua;
     border-style: groove;
     height: auto;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(https://images.unsplash.com/photo-1540393941896-255c66854aaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)
 }
 
 .main-container {
@@ -34,11 +36,11 @@
     padding: 20px;
     margin-bottom: 30px;
     margin-left: 290px;
-    background-color: #FFCB15;
+    background-color: white;
     width: 30vw;
-    border: 1px solid #FFC199;
+    border: 1px solid #DCDCDC;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px #FFCB15, 0 2px 4px 0 #FFCB15, 0 2px 10px 0 #FFCB15;
+    box-shadow: 0 0 0 1px #DCDCDC, 0 2px 4px 0 #DCDCDC, 0 2px 10px 0 #DCDCDC;
 }
 
 .listing-cont {
@@ -98,7 +100,12 @@
     border-radius: 5px;
     border: 5px solid white;
     box-shadow: 0 0 0 1px #d4d4d5, 0 2px 10px 0 #FFCB15, 0 2px 10px 0 #FFCB15;
+}
 
+.house.desc {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -139,6 +146,7 @@
 }
 
 .form-cont {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(https://images.unsplash.com/photo-1512515042719-143e0afbef8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
     border: 1px solid#DCDCDC;
     border-radius: 5px;
     box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
@@ -170,11 +178,24 @@
 .your-listing-cont {
     border: 1px solid#DCDCDC;
     text-align: center;
-    padding: 30px;
+    padding: 50px;
+    padding-left:80px;
     width: auto;
     height: auto;
     margin-top: 30px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 10px 0 #FFCB15, 0 2px 10px 0 #FFCB15; 
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15); 
+}
+
+.prop.head {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 400px;
+    margin-top: 30px;
+    border: 1px solid #DCDCDC;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #DCDCDC, 0 2px 4px 0 #DCDCDC, 0 2px 10px 0 #DCDCDC;
 }
 
 .list.offer.ui.card {
@@ -259,6 +280,14 @@
     box-shadow: 0 0 0 1px #FFCB15, 0 1px 1px 0 #FFCB15, 0 1px 4px 0 #FFCB15;
 }
 
+.house.desc {
+    margin-left:150px;
+    
+    text-align: center;
+    margin-right: 150px;
+
+}
+
 .address {
     text-align:center;
 }
@@ -334,6 +363,10 @@
     margin-top:20px;
 }
 
+.listing.form.ui.segment {
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+}
+
 .ui.large.yellow.button {
     margin-bottom:10px;
 }
@@ -346,9 +379,7 @@
     text-align: center;
 }
 
-.user.main-container {
 
-}
 
 /* show container */
 

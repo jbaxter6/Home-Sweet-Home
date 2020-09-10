@@ -163,7 +163,7 @@ export default class ListingForm extends Component {
                         <h1>Time to put your Property on the Market?</h1>
                     </div>
                     
-                    <div class="ui segment">
+                    <div class="listing form ui segment">
                             <form class="ui form" onSubmit={(e) => this.handleCreatedListing(e)}>
                                 <div class="ui two column very relaxed grid">
 

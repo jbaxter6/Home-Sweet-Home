@@ -74,7 +74,7 @@ class ShowContainer extends Component {
 
                     <div class="ui clearing divider"></div>
 
-                    <div>
+                    <div class="house desc">
                         <p>{listing.description}</p>
                     </div>
 

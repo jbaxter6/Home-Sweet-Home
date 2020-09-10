@@ -63,7 +63,7 @@ export default class UserContainer extends Component {
                     {
                         this.state.user.listings.length > 0 ?
                             <div>
-                                <div >
+                                <div class="prop head">
                                     <h1>Your Properties</h1>
                                 </div>
                                     <div class="list offer ui cards">
@@ -79,7 +79,9 @@ export default class UserContainer extends Component {
                     {
                         this.state.user.offers.length > 0 ?
                             <div >
-                                <h1>Your Offers</h1>
+                                <div class="prop head">
+                                    <h1>Your Offers</h1>
+                                </div>
                                     <div class="list offer ui cards">
                                     {
                                         this.generateOffer()
@@ -99,66 +101,5 @@ export default class UserContainer extends Component {
         )
     }
 }
-
-
-{/* <div class="user-card" >
-                    <div class="image-c">
-                        <img class="card ui image" src={this.state.user.image} alt="user"></img>
-                    </div>
-
-                    <div class="desc-c">
-                        <p class="header">{this.state.user.username}</p>
-                        <p class="header">{this.state.user.email}</p>
-                        <div class="description">
-                            {this.state.user.description}
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="ui centered card">
-                    
-                    <div class="extra content">
-                            <i class="user icon"></i>
-                            {this.state.user.up_votes} up-votes
-                    </div>
-                </div>
-
-                <div className="your-listing-container">
-                    
-                    {
-                        this.state.user.listings.length > 0 ?
-                        <h1>Your Properties</h1>
-                        :
-                        null
-                    }
-                    
-                    <div class="ui cards">
-                    {
-                    this.generateListing()
-                    }  
-                    </div>   
-
-                </div>
-
-                <br></br>
-                <br></br>
-
-                <div className="your-offers-container">
-
-                    {
-                        this.state.user.offers.length > 0 ?
-                        <h1> Created Offers </h1> 
-                        :
-                        null
-                    }
-
-                    <div class="ui cards">
-
-                {
-                this.generateOffer()
-                }
-
-                    </div>
-                </div> */}
+ 
+// This is a beautiful home that
