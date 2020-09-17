@@ -15,8 +15,8 @@ export default class ListingContainer extends Component {
             <div class="listing-cont">
 
                 <div class="cont-header">
-                    <div>
-                        <h1> Active Listings </h1>
+                    <div class="total-listings">
+                        <h1> {this.props.totalListings} Active Listings </h1>
                     </div>
 
                     <div class="page">
