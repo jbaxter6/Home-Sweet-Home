@@ -10,7 +10,8 @@
 
 ### 🏠 [Homepage](https://github.com/jbaxter6/Home-Sweet-Home)
 
-### ✨ [Demo](https://github.com/jbaxter6/Home-Sweet-Home)
+### DEMO
+![Home Sweet Home Demo](HSH.gif)
 
 ## Install
 
