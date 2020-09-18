@@ -10,6 +10,12 @@
 
 ### 🏠 [Homepage](https://github.com/jbaxter6/Home-Sweet-Home)
 
+## Back-end
+
+```sh
+back-end link: https://github.com/jbaxter6/hsh-back-end
+```
+
 ### DEMO
 ![Home Sweet Home Demo](HSH.gif)
 
