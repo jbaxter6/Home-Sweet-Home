@@ -13,6 +13,12 @@
 ### DEMO
 ![Home Sweet Home Demo](HSH.gif)
 
+## Back-end
+
+```sh
+git clone https://github.com/jbaxter6/hsh-back-end.git
+```
+
 ## Install
 
 ```sh
@@ -37,7 +43,7 @@ npm run test
 
 * Website: https://medium.com/@jbaxter6
 * Github: [@jbaxter6](https://github.com/jbaxter6)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/johnnathan-baxter-6b7a61158\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/johnnathan-baxter-6b7a61158\/)
+* LinkedIn: [@https://www.linkedin.com/in/johnnathan-baxter-6b7a61158/](https://www.linkedin.com/in/johnnathan-baxter-6b7a61158/)
 
 ## Show your support
 
