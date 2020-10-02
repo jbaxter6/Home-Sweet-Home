@@ -10,7 +10,7 @@
 
 ### 🏠 [Homepage](https://github.com/jbaxter6/Home-Sweet-Home)
 
-## Back-end
+## Back-end: Rails or Node.js
 
 ```sh
 rails back-end link: https://github.com/jbaxter6/hsh-back-end
