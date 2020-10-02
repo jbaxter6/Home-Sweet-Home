@@ -13,7 +13,8 @@
 ## Back-end
 
 ```sh
-back-end link: https://github.com/jbaxter6/hsh-back-end
+rails back-end link: https://github.com/jbaxter6/hsh-back-end
+node.js back-end link: https://github.com/jbaxter6/homesweethome-node
 ```
 
 ### DEMO
